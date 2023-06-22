@@ -264,7 +264,7 @@ INSERT INTO results
 select 21, departure_city
 from  bookings.routes r 
 group by departure_city
-having EXTRACT(EPOCH FROM avg(duration))/3600 < 3
-order by avg(duration)
+having EXTRACT(EPOCH FROM avg(duration))/3600 > 3
+order by avg(duration) desc
 limit 5
 ;
